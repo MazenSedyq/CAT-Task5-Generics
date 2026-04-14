@@ -1,0 +1,14 @@
+C:\Users\ENG_MAZEN\source\repos\ShoppingSystem\ShoppingSystem\bin\Debug\net10.0\ShoppingSystem.exe
+C:\Users\ENG_MAZEN\source\repos\ShoppingSystem\ShoppingSystem\bin\Debug\net10.0\ShoppingSystem.deps.json
+C:\Users\ENG_MAZEN\source\repos\ShoppingSystem\ShoppingSystem\bin\Debug\net10.0\ShoppingSystem.runtimeconfig.json
+C:\Users\ENG_MAZEN\source\repos\ShoppingSystem\ShoppingSystem\bin\Debug\net10.0\ShoppingSystem.dll
+C:\Users\ENG_MAZEN\source\repos\ShoppingSystem\ShoppingSystem\bin\Debug\net10.0\ShoppingSystem.pdb
+C:\Users\ENG_MAZEN\source\repos\ShoppingSystem\ShoppingSystem\obj\Debug\net10.0\ShoppingSystem.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\ENG_MAZEN\source\repos\ShoppingSystem\ShoppingSystem\obj\Debug\net10.0\ShoppingSystem.AssemblyInfoInputs.cache
+C:\Users\ENG_MAZEN\source\repos\ShoppingSystem\ShoppingSystem\obj\Debug\net10.0\ShoppingSystem.AssemblyInfo.cs
+C:\Users\ENG_MAZEN\source\repos\ShoppingSystem\ShoppingSystem\obj\Debug\net10.0\ShoppingSystem.csproj.CoreCompileInputs.cache
+C:\Users\ENG_MAZEN\source\repos\ShoppingSystem\ShoppingSystem\obj\Debug\net10.0\ShoppingSystem.dll
+C:\Users\ENG_MAZEN\source\repos\ShoppingSystem\ShoppingSystem\obj\Debug\net10.0\refint\ShoppingSystem.dll
+C:\Users\ENG_MAZEN\source\repos\ShoppingSystem\ShoppingSystem\obj\Debug\net10.0\ShoppingSystem.pdb
+C:\Users\ENG_MAZEN\source\repos\ShoppingSystem\ShoppingSystem\obj\Debug\net10.0\ShoppingSystem.genruntimeconfig.cache
+C:\Users\ENG_MAZEN\source\repos\ShoppingSystem\ShoppingSystem\obj\Debug\net10.0\ref\ShoppingSystem.dll

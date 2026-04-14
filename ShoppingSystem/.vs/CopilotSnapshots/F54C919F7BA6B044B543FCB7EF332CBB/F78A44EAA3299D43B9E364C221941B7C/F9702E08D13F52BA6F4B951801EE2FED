@@ -1,0 +1,146 @@
+﻿using System;
+using System.Collections.Generic;
+using System.ComponentModel.Design;
+using System.Text;
+using System.Xml.Linq;
+
+namespace ShoppingSystem
+{
+    public class Shop
+    {
+        private Cart cart = new();
+        private Logs logs = new();
+
+        public void Screen()
+        {
+            while (true)
+            {
+                Console.Clear();
+
+                Console.WriteLine("SHOPPING SYSTEM\n\n");
+                Console.WriteLine("[1] Add Item To Cart");
+                Console.WriteLine("[2] View Cart");
+                Console.WriteLine("[3] Remove Item From Cart");
+                Console.WriteLine("[4] Checkout");
+                Console.WriteLine("[5] Undo Last Action");
+                Console.WriteLine("[6] Exit");
+
+                Console.Write("CHOOSE: ");
+                int choose = -1;
+                while (!int.TryParse(Console.ReadLine(), out choose))
+                    Console.Write("Invalid Option, CHOOSE: ");
+
+                switch (choose)
+                {
+                    case 1:
+                        AddToCart(cart, logs);
+                        Console.WriteLine("\n\n PRESS ENTER...");
+                        Console.ReadLine();
+                        break;
+                    
+                    case 2:
+                        ViewCart(cart);
+                        Console.WriteLine("\n\n PRESS ENTER...");
+                        Console.ReadLine();
+                        break;
+                    
+                    case 3:
+                        RemoveFromCart(cart, logs);
+                        Console.WriteLine("\n\n PRESS ENTER...");
+                        Console.ReadLine();
+                        break;
+                    
+                    case 4:
+                        Checkout(cart , logs);
+                        Console.WriteLine("\n\n PRESS ENTER...");
+                        Console.ReadLine();
+                        break;
+                    
+                    case 5:
+                        UndoAction(cart , logs);
+                        break;
+                    
+                    case 6:
+                        Environment.Exit(0);
+                        break;
+
+                    default:
+                        Console.WriteLine("Invalid Input");
+                        break;
+                }
+            }
+        }
+
+
+        private static void AddToCart(Cart cart , Logs logs)
+        {
+            Product p = InputProduct();
+            cart.Add(p);
+
+            logs.ActionLog.Push(new Log(p, Action.Add));
+
+            p.Print();
+
+        }
+
+        private static void ViewCart(Cart cart)
+        {
+            var products = cart.Products;
+
+            Console.WriteLine($"┌{new string('─', 6)}┬{new string('─', 22)}┬{new string('─', 12)}┐");
+            Console.WriteLine($"│ {"ID",-4} │ {"Name",-20} │ {"Price",-10} │");
+            Console.WriteLine($"├{new string('─', 6)}┼{new string('─', 22)}┼{new string('─', 12)}┤");
+
+            for (int i = 0; i < products.Count; i++)
+            {
+                Console.WriteLine($"│ {products[i].ID,-4} │ {products[i].Name,-20} │ {products[i].Price,-10} │");
+
+                if(i != products.Count - 1)
+                    Console.WriteLine($"├{new string('─', 6)}┼{new string('─', 22)}┼{new string('─', 12)}┤");
+                else
+                    Console.WriteLine($"└{new string('─', 6)}┴{new string('─', 22)}┴{new string('─', 12)}┘");
+
+            }
+
+        }
+
+        private static void RemoveFromCart(Cart cart, Logs logs)
+        {
+
+
+        }
+
+        private void Checkout(Cart cart, Logs logs)
+        {
+            throw new NotImplementedException();
+        }
+
+        private void UndoAction(Cart cart, Logs logs)
+        {
+            throw new NotImplementedException();
+        }
+
+
+        private static Product InputProduct()
+        {
+            string name = "";
+            decimal price = 0;
+
+            name = Console.ReadLine() ?? "";
+            while (string.IsNullOrEmpty(name))
+            {
+                Console.Write("Must Input a Name : ");
+                name = Console.ReadLine() ?? "";
+            }
+
+            Console.Write("Input Price: ");
+            while (!decimal.TryParse(Console.ReadLine(), out price))
+                Console.Write("Invalid Option, Input Price: ");
+
+            return new Product(name, price);
+        }
+
+
+
+    }
+}
